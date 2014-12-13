@@ -39,6 +39,14 @@
   <template>
 
     <style>
+      .header-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 175px;
+      }
+
       .chip-container {
         position: absolute;
         top: 175px;
@@ -109,6 +117,7 @@
 
       <section>
 
+        <div class="header-container"></div>
         <div class="chip-container" hero-p on-tap="{{transition}}">
 
           <template repeat="{{items as item}}">
