@@ -39,6 +39,21 @@
   <template>
 
     <style>
+      .title {
+        font-size: 250%;
+        color: white;
+        padding-left: 100px;
+        padding-top: 35px;
+      }
+
+      .description {
+        color: #F8F8F8;
+        font-size: 90%;
+        padding-left: 170px;
+        padding-top: 7px;
+        width: 860px;
+      }
+
       .header-container {
         position: absolute;
         top: 0;
@@ -81,7 +96,7 @@
       }
 
       #details {
-        padding: 100px 10% 0;
+        padding: 20px 5% 20px;
       }
 
       .card {
@@ -117,7 +132,10 @@
 
       <section>
 
-        <div class="header-container"></div>
+        <div class="header-container">
+          <div class="title">Beginning Business Basics</div>
+          <div class="description">One of the most comprehensive business classes for naturopathic and acupuncture students, the Beginning Business Basics workshop series covers the details necessary to become a licensed healthcare provider, start your own business, or start working for someone else. Taught by Dr. Jenny Berg and Dr. Kelly Baker, these workshops will help you to prepare for working in the healthcare field.</div>
+        </div>
         <div class="chip-container" hero-p on-tap="{{transition}}">
 
           <template repeat="{{items as item}}">
@@ -147,7 +165,10 @@
               </div>
               <div flex>
                 <div class="card-album-title">{{selectedAlbum.album}}</div>
-                <div class="card-album-artist">{{selectedAlbum.artist}}</div>
+                <div class="card-album-artist">{{selectedAlbum.date}}</div>
+                <template repeat="{{selectedAlbum.descriptions as description}}">
+                  <div>{{description}}</div>
+                </template>
               </div>
             </div>
           </div>
@@ -165,15 +186,15 @@
       page: 0,
 
       items: [
-        { name: 'Class 1', album: 'Business Financials', color: '#f4db33', date: 'Oct. 18th, 2014'},
-        { name: 'Class 2', album: 'Graduation to Licensure', color: '#972ff8', date: 'Nov. 22nd, 2014'},
-        { name: 'Class 3', album: 'Finding a Job Part 1', color: '#7dd6fe', date: 'Dec. 13th, 2014' },
-        { name: 'Class 4', album: 'Finding a Job Part 2', color: '#dc3c84', date: 'Jan. 24th, 2015' },
-        { name: 'Class 5', album: 'Marketing Basics', color: '#f4db33', date: 'Feb. 21st, 2015' },
-        { name: 'Class 6', album: 'Business Internet Basics', color: '#972ff8', date: 'March 7th, 2015' },
-        { name: 'Class 7', album: 'Essentials of Opening a Business', color: '#7dd6fe', date: 'April 11th, 2015' },
-        { name: 'Class 8', album: 'Business Services Pt 1', color: '#dc3c84', date: 'May 16th, 2015' },
-        { name: 'Class 9', album: 'Business Services Pt 2', color: '#7dd6fe', date: 'June 6th, 2015' }   
+        { name: 'Class 1', album: 'Business Financials', color: '#ffdd77', date: 'Oct. 18th, 2014', descriptions:['Estimating Start Up Costs','Setting Up Your Financial System','Getting Money to Fund Your Business','Loan Repayment Options','Business Taxes']},
+        { name: 'Class 2', album: 'Graduation to Licensure', color: '#88ddee', date: 'Nov. 22nd, 2014'},
+        { name: 'Class 3', album: 'Finding a Job Part 1', color: '#ddbb88', date: 'Dec. 13th, 2014' },
+        { name: 'Class 4', album: 'Finding a Job Part 2', color: '#ddbb88', date: 'Jan. 24th, 2015' },
+        { name: 'Class 5', album: 'Marketing Basics', color: '#ffdd77', date: 'Feb. 21st, 2015' },
+        { name: 'Class 6', album: 'Business Internet Basics', color: '#88ddee', date: 'March 7th, 2015' },
+        { name: 'Class 7', album: 'Essentials of Opening a Business', color: '#88ddee', date: 'April 11th, 2015' },
+        { name: 'Class 8', album: 'Business Services Pt 1', color: '#ffdd77', date: 'May 16th, 2015' },
+        { name: 'Class 9', album: 'Business Services Pt 2', color: '#ddbb88', date: 'June 6th, 2015' }   
       ],
 
       selectedAlbum: null,
