@@ -23,27 +23,27 @@
       background: #f1f1f1;
     }
 
-    .green {
+    .blue {
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
-      height: 350px;
-      background: #70c26f;
+      height: 250px;
+      background: #0099FF;
     }
   </style>
 </head>
 <body>
 
-  <polymer-element name="music-demo">
+  <polymer-element name="bbb-classes-list">
   <template>
 
     <style>
       .chip-container {
         position: absolute;
-        top: 275px;
-        right: 0;
-        left: 0;
+        top: 175px;
+        width: 1100px;
+        left: 50px;
         text-align: center;
       }
 
@@ -59,8 +59,8 @@
       }
 
       .chip-top {
-        width: 200px;
-        height: 200px;
+        width: 280px;
+        height: 100px;
       }
 
       .chip-bottom {
@@ -73,11 +73,11 @@
       }
 
       #details {
-        padding: 200px 10% 0;
+        padding: 100px 10% 0;
       }
 
       .card {
-        height: 400px;
+        height: 600px;
         border-radius: 3px;
         text-align: start;
         overflow: hidden;
@@ -114,10 +114,11 @@
           <template repeat="{{items as item}}">
 
             <div class="chip" hero-id="{{item.artist}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
-              <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-top" style="background:{{item.color}};" hero-id="{{item.artist}}-{{item.album}}-art" hero?="{{selectedAlbum === item}}">
+              </div>
               <div class="chip-bottom">
                 <div class="chip-album-title">{{item.album}}</div>
-                <div class="chip-artist">{{item.artist}}</div>
+                <div class="chip-artist">{{item.date}}</div>
               </div>
             </div>
 
@@ -150,15 +151,20 @@
   </template>
   <script>
 
-    Polymer('music-demo', {
+    Polymer('bbb-classes-list', {
 
       page: 0,
 
       items: [
-        { name: 'Class 1', album: 'Fragments', color: '#f4db33' },
-        { name: 'Class 2', album: 'Past Prologue', color: '#972ff8' },
-        { name: 'Class 3', album: 'Spectre', color: '#7dd6fe' },
-        { name: 'Class 4', album: 'Awake', color: '#dc3c84' }
+        { name: 'Class 1', album: 'Business Financials', color: '#f4db33', date: 'Oct. 18th, 2014'},
+        { name: 'Class 2', album: 'Graduation to Licensure', color: '#972ff8', date: 'Nov. 22nd, 2014'},
+        { name: 'Class 3', album: 'Finding a Job Part 1', color: '#7dd6fe', date: 'Dec. 13th, 2014' },
+        { name: 'Class 4', album: 'Finding a Job Part 2', color: '#dc3c84', date: 'Jan. 24th, 2015' },
+        { name: 'Class 5', album: 'Marketing Basics', color: '#f4db33', date: 'Feb. 21st, 2015' },
+        { name: 'Class 6', album: 'Business Internet Basics', color: '#972ff8', date: 'March 7th, 2015' },
+        { name: 'Class 7', album: 'Essentials of Opening a Business', color: '#7dd6fe', date: 'April 11th, 2015' },
+        { name: 'Class 8', album: 'Business Services Pt 1', color: '#dc3c84', date: 'May 16th, 2015' },
+        { name: 'Class 9', album: 'Business Services Pt 2', color: '#7dd6fe', date: 'June 6th, 2015' }   
       ],
 
       selectedAlbum: null,
@@ -176,8 +182,8 @@
   </script>
   </polymer-element>
 
-  <div class="green"></div>
+  <div class="blue"></div>
 
-  <music-demo></music-demo>
+  <bbb-classes-list></bbb-classes-list>
 </body>
 </html>
