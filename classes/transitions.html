@@ -15,6 +15,7 @@
 
   <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
   <link href="../bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
 
   <style>
     body {
@@ -134,7 +135,7 @@
       }
 
       .card-left {
-        width: 400px;
+        width: 300px;
       }
 
       .card-right {
@@ -151,6 +152,11 @@
       .card-album-title {
         font-size: 2em;
       }
+
+      .register-button {
+        color: red;
+      }
+
     </style>
 
     <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
@@ -189,7 +195,10 @@
                 <div class="card-icon" style="background:{{selectedAlbum.color}};"></div>
               </div>
               <div flex>
-                <div class="card-album-title">{{selectedAlbum.album}}</div>
+                <div horizontal layout>
+                  <div class="card-album-title" flex>{{selectedAlbum.album}}</div>
+                  <paper-button class="register-button" raised>Register Now!</paper-button>
+                </div>
                 <div class="card-album-artist">{{selectedAlbum.date}}</div>
                 <ul>
                 <template repeat="{{selectedAlbum.descriptions as description}}">
@@ -244,9 +253,9 @@
   <div class="white">
     <div horizontal layout>
       <div class="registration-info">Registration open to all ND and AOM students or licensed practitioners.</div>
-      <div class="registration-info">Registration per workshop is $75.  Early registration is $50. (2 weeks prior to workshop)
+      <div class="registration-info">Registration per workshop is $75. Early registration is $50. (2 weeks prior to workshop)
       </div>
-      <div class="registration-info">Location: Phinney Ridge Neighborhood Center. All materials and handouts provided day of workshop.</div>
+      <div class="registration-info"><div>Location: Phinney Ridge Neighborhood Center.</div><div>Hours: 1:30pm - 3:30pm.</div></div>
     </div>
   </div>
 
