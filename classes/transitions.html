@@ -16,6 +16,7 @@
   <script src="../bower_components/webcomponentsjs/webcomponents.js"></script>
   <link href="../bower_components/core-animated-pages/core-animated-pages.html" rel="import">
   <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-shadow/paper-shadow.html">
 
   <style>
     body {
@@ -25,15 +26,17 @@
     }
 
     .blue {
+      z-index: -1;
       position: absolute;
       top: 0;
       right: 0;
       left: 0;
-      height: 250px;
+      height: 270px;
       background: #0099FF;
     }
 
     .grey {
+      z-index: -2;
       position: absolute;
       top: 250px;
       right: 0;
@@ -47,32 +50,35 @@
       top: 600px;
       right: 0;
       left: 0;
-      height: 80px;
+      height: 70px;
       background: #FFFFFF;
     }
 
     .registration-info {
-      padding: 7px 23px;
+      width: 350px;
+      padding: 7px 13px;
+      margin-top: 10px;
     }
 
-  </style>
-</head>
-<body>
-
-  <polymer-element name="bbb-classes-list">
-  <template>
-
-    <style>
-
-
-      .title {
+    .title {
         font-size: 250%;
         color: white;
         padding-left: 100px;
-        padding-top: 35px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        width: 500px;
       }
 
-      .description {
+      .university-tag {
+          color: white;
+          padding-top: 48px;
+      }
+
+      .university-tag a {
+        color: white;
+      }
+
+      .bbb-description {
         color: #F8F8F8;
         font-size: 90%;
         padding-left: 170px;
@@ -88,9 +94,31 @@
         height: 175px;
       }
 
+      .border-right {
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-color: #A0A0A0;
+      }
+
+  </style>
+</head>
+<body>
+  <div class="header-container">
+          <paper-shadow z="1" horizontal layout>
+            <div class="title">Beginning Business Basics</div>
+            <div class="university-tag">brought to you by <a href="http://www.ariaintegrative.com/">Aria Integrative Medicine</a></div>
+          </paper-shadow>
+          <div class="bbb-description">One of the most comprehensive business classes for naturopathic and acupuncture students, the Beginning Business Basics workshop series covers the details necessary to become a licensed healthcare provider, start your own business, or start working for someone else. Taught by Dr. Jenny Berg and Dr. Kelly Baker, these workshops will help you to prepare for working in the healthcare field.</div>
+  </div>
+  <polymer-element name="bbb-classes-list">
+  <template>
+
+    <style>
+
+
       .chip-container {
         position: absolute;
-        top: 175px;
+        top: 190px;
         width: 1100px;
         left: 50px;
         text-align: center;
@@ -155,6 +183,7 @@
 
       .register-button {
         color: red;
+        height: 40px;
       }
 
     </style>
@@ -162,11 +191,6 @@
     <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
 
       <section>
-
-        <div class="header-container">
-          <div class="title">Beginning Business Basics</div>
-          <div class="description">One of the most comprehensive business classes for naturopathic and acupuncture students, the Beginning Business Basics workshop series covers the details necessary to become a licensed healthcare provider, start your own business, or start working for someone else. Taught by Dr. Jenny Berg and Dr. Kelly Baker, these workshops will help you to prepare for working in the healthcare field.</div>
-        </div>
         <div class="chip-container" hero-p on-tap="{{transition}}">
 
           <template repeat="{{items as item}}">
@@ -252,10 +276,10 @@
   <div class="grey"></div>
   <div class="white">
     <div horizontal layout>
-      <div class="registration-info">Registration open to all ND and AOM students or licensed practitioners.</div>
-      <div class="registration-info">Registration per workshop is $75. Early registration is $50. (2 weeks prior to workshop)
+      <div class="registration-info border-right">Registration is open to all ND and AOM students or licensed practitioners.</div>
+      <div class="registration-info border-right"><div>Registration per workshop is $75.</div><div>Early registration is $50. (2 weeks prior)</div>
       </div>
-      <div class="registration-info"><div>Location: Phinney Ridge Neighborhood Center.</div><div>Hours: 1:30pm - 3:30pm.</div></div>
+      <div class="registration-info"><div>Location: <a href="http://www.phinneycenter.org/about/directions.html">Phinney Ridge Neighborhood Center.</a></div><div>Hours: 1:30pm - 3:30pm.</div></div>
     </div>
   </div>
 
