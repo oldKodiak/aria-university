@@ -71,7 +71,7 @@
 
       .university-tag {
           color: white;
-          padding-top: 48px;
+          padding-top: 8px;
       }
 
       .university-tag a {
@@ -101,13 +101,28 @@
         width: 860px;
       }
 
+      .register-button {
+        background: white;
+        color: red;
+        height: 40px;
+      }
+
+      .right-header {
+        margin-top: 5px;
+      }
   </style>
 </head>
 <body>
   <div class="header-container">
           <paper-shadow z="1" horizontal layout>
             <div class="title">Beginning Business Basics</div>
+            <div vertical layout class="right-header">
+              <div horizontal layout>
+                <div flex></div>
+                <div><paper-button class="register-button" raised>Register Now!</paper-button></div>
+              </div>
             <div class="university-tag">brought to you by <a href="http://www.ariaintegrative.com/">Aria Integrative Medicine</a></div>
+            </div>
           </paper-shadow>
   </div>
   <polymer-element name="bbb-classes-list">
@@ -115,7 +130,12 @@
 
     <style>
 
-
+      .register-button {
+        background: white;
+        color: red;
+        height: 40px;
+      }
+      
       .chip-container {
         position: absolute;
         top: 120px;
@@ -154,7 +174,7 @@
       }
 
       .card {
-        height: 600px;
+        height: 500px;
         border-radius: 3px;
         text-align: start;
         overflow: hidden;
@@ -163,7 +183,7 @@
       }
 
       .card-left {
-        width: 300px;
+        width: 200px;
       }
 
       .card-right {
@@ -179,11 +199,6 @@
 
       .card-album-title {
         font-size: 2em;
-      }
-
-      .register-button {
-        color: red;
-        height: 40px;
       }
 
     </style>
@@ -279,7 +294,7 @@
   <div class="white">
     <div horizontal layout>
       <div class="registration-info border-right">Registration is open to all ND and AOM students or licensed practitioners.</div>
-      <div class="registration-info border-right"><div>Registration per workshop is $75.</div><div>Early registration is $50. (2 weeks prior)</div>
+      <div class="registration-info border-right"><div><b>Registration per workshop is $75.</b></div><div>Early registration is $50. (2 weeks prior)</div>
       </div>
       <div class="registration-info"><div>Location: <a href="http://www.phinneycenter.org/about/directions.html">Phinney Ridge Neighborhood Center.</a></div><div>Hours: 1:30pm - 3:30pm.</div></div>
     </div>
